@@ -20,7 +20,7 @@ public class Main {
         Busqueda busqueda;
         
         inicial = new Estado(1,0,0,null,null);
-        fin = new Estado(1,9,0,null,null);
+        fin = new Estado(4,2,0,null,null);
         
         busqueda = new Busqueda(inicial , fin );
         
