@@ -31,6 +31,7 @@ public class Mapa {
     public Character[][] getMapa(){
         return mapa;
     }
+    
 
 }
 

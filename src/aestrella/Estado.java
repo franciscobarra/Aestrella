@@ -45,6 +45,14 @@ public class Estado implements Comparable<Estado> {
 
         this.f = this.g + this.h;
     }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
     
     public void printMapa(){
         System.out.println("Mapa Inicial : ");
@@ -67,6 +75,7 @@ public class Estado implements Comparable<Estado> {
             for(int i=0;i< 6;i++){
                for(int j=0; j< 10; j++){
                    if(i==actual.get(x).x && j==actual.get(x).y){
+                      mapa[i][j]='V'; 
                       System.out.print("  *");  
                     }
                     else{
@@ -108,25 +117,25 @@ public class Estado implements Comparable<Estado> {
     
     public boolean moverArriba(){
         if(this.x-1>=0){
-           return mapa[this.x-1][this.y]=='V';
+           return mapa[this.x-1][this.y]=='V' || mapa[this.x-1][this.y]=='M';
         }
         return false;
     }
      public boolean moverAbajo(){
          if(this.x+1 < 5){
-           return mapa[this.x+1][this.y]=='V';
+           return mapa[this.x+1][this.y]=='V' || mapa[this.x+1][this.y]=='M';
         }
         return false;
     }
       public boolean moverIzquierda(){
           if(this.y-1>=0){
-           return mapa[this.x][this.y-1]=='V';
+           return mapa[this.x][this.y-1]=='V' || mapa[this.x][this.y-1]=='M' ;
         }
         return false;
     }
        public boolean moverDerecha(){
          if(this.y+1 < 10){
-           return mapa[this.x][this.y+1]=='V';
+           return mapa[this.x][this.y+1]=='V' || mapa[this.x][this.y+1]=='M' ;
          }
          return false;
     }
